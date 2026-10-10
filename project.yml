@@ -1,0 +1,41 @@
+name: PortScanner
+options:
+  bundleIdPrefix: com.example
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  PortScanner:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources
+    info:
+      path: Support/Info.plist
+      properties:
+        CFBundleDisplayName: Port Scanner
+        UILaunchScreen: {}
+        NSLocalNetworkUsageDescription: Allows scanning devices on your local network to find open ports.
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.portscanner
+schemes:
+  PortScanner:
+    build:
+      targets:
+        PortScanner: all
+    run:
+      config: Debug
+    archive:
+      config: Release
